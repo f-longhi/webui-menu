@@ -1,0 +1,139 @@
+.menu, .menubar {
+  --text-color: #444;
+  --active-bg-color: #eff7f7;
+  --active-text-color: #444;
+  --font-size: 14px;
+  --font-family: Roboto, sans serif;
+}
+
+.menu {
+  margin: 0;
+  box-sizing: border-box;
+  z-index: 32000;
+  display: block;
+  max-height: 100%;
+  overflow:auto;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, .1), 0px 0px 3px rgba(0, 0, 0, .2);
+  padding: 8px 0;
+}
+
+.menu-separator {
+  border: none;
+  border-top: solid 1px #E0E0E0;
+  margin: 4px 0;
+  padding: 0;
+}
+
+.menuitem {
+  align-items: center;
+  background: transparent;
+  border: solid 1px transparent;
+  border-radius: 0;
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  flex-flow: row nowrap;
+  font: 400 normal 14px/1em sans-serif;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  height: 32px;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0 16px;
+  position: relative;
+  text-align: left;
+  transition: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.menuitem::-moz-focus-inner {
+  border: none;
+}
+
+.menuitem.has-menuitems.active,
+.menuitem:hover,
+.menuitem:focus,
+.menuitem:active {
+  background-color: var(--active-bg-color);
+  color: var(--active-text-color);
+  outline: none;
+}
+
+.menuitem:disabled {
+  color: #bbb;
+  cursor: default;
+  pointer-events: none;
+}
+
+.menuitem.default-item {
+ font-weight: bold;
+}
+
+.menuitem.has-menuitems::after {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  content: 'chevron_right';
+  font-size: 16px;
+  font-family: "Material Icons";
+}
+
+.menuitem-fonticon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  line-height: 16px;
+  font-family: Material Icons;
+  font-size: 16px;
+}
+
+.menuitem.checkbox .menuitem-fonticon::before {
+  content: 'check_box_outline_blank';
+  opacity: 0.8;
+}
+
+.menuitem.checkbox.checked .menuitem-fonticon::before {
+  content: 'check_box';
+  opacity: 1;
+}
+
+.menuitem.checkbox:hover .menuitem-fonticon::before,
+.menuitem.radio:hover .menuitem-fonticon::before {
+  opacity: 1;
+  color: black;
+}
+
+.menuitem.radio .menuitem-fonticon::before {
+  content: 'radio_button_unchecked';
+  opacity: 0.8;
+}
+
+.menuitem.radio.checked .menuitem-fonticon::before {
+  content: 'radio_button_checked';
+  opacity: 1;
+}
+
+.menu:not(.menu-contains-icons) .menuitem-fonticon {
+  display: none;
+}
+
+.menuitem-text {
+  width: 100%;
+  margin-left: 8px;
+  margin-right: 28px;
+}
+
+.menuitem-shortcut {
+  opacity: 0.7;
+}
+

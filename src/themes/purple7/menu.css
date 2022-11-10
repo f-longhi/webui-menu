@@ -1,0 +1,141 @@
+@keyframes showContextMenu {
+  from { opacity: 0 }
+    to { opacity: 1 }
+}
+
+.menu {
+  margin: 0;
+  box-sizing: border-box;
+/*   animation: showContextMenu .2s linear; */
+  z-index: 32000;
+  max-height: 100%;
+  overflow:auto;
+  border: solid 1px #979797;
+  background-color: #F0F0F0;
+  box-shadow: inset 0 0 2px #fff;
+  padding: 2px;
+}
+
+.menu::before {
+  content: ' ';
+  display: block;
+  border-left: solid 1px #e2e3e3;
+  border-right: solid 1px #ffffff;
+  position: absolute;
+  top: 2px;
+  left: 28px;
+  height: calc(100% - 4px);
+}
+
+
+.menu button {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.menu button {
+  background: transparent;
+  border: solid 1px transparent;
+  border-radius: 3px;
+  color: #000;
+  cursor: default;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  font: normal 12px/1em Segoe UI, sans-serif;
+  padding: 4px 8px 5px 32px;
+  position: relative;
+  text-align: left;
+  transition: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.menu button::-moz-focus-inner {
+  border: none;
+}
+
+.menu button.has-menuitems.active,
+.menu button:hover,
+.menu button:focus,
+.menu button:active {
+  background: linear-gradient(#dcf4, #cbe4);
+  border-color: #cbe;
+  box-shadow: inset 0 0 1px #fff;
+  outline: none;
+}
+
+.menu button:disabled {
+  color: #888;
+  cursor: default;
+}
+
+.menu button:disabled:hover {
+}
+
+.menu button:disabled:hover {
+  background: linear-gradient(#fff4, #bbb4);
+  border-color: #c8c8c8;
+}
+
+.menu .default-item {
+ font-weight: bold;
+}
+
+.has-menuitems::after {
+  position: absolute;
+  top: 6px;
+  right: 4px;
+  display:  block;
+  content: '';
+  font-size: 12px;
+  font-family: material icons;
+  color: #333;
+  border: 4px solid transparent;
+  border-left-color: #555
+}
+
+.menu hr {
+  border: none;
+  border-top: solid 1px #e0e0e0;
+  border-bottom: solid 1px #fff;
+  margin: 3px 0 3px 28px;
+  padding: 0;
+}
+
+.menuitem-text {
+  flex-shrink: 0;
+  margin-right: 40px;
+}
+
+.menuitem-shortcut {
+  margin-left: -16px;
+  margin-right: 8px;
+}
+
+.menu-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menuitem-fonticon {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  line-height: 16px;
+  font-family: Material Icons;
+  font-size: 16px;
+  color: #333;
+}

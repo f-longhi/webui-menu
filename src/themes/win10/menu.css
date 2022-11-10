@@ -1,0 +1,191 @@
+
+.menu {
+  margin: 0;
+  box-sizing: border-box;
+  z-index: 32000;
+  display: block;
+  max-height: 100%;
+  overflow:auto;
+  background: rgb(242, 242, 242);
+  border: solid 1px rgb(204, 204, 204);
+  border-radius: 0px;
+  padding: 2px 2px;
+  position: relative;
+}
+
+.menu::before {
+  content: '';
+  background: rgb(240,240,240);
+  width: 26px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: calc(100% - 4px);
+}
+
+.menu-separator {
+  border: none;
+  border-top: solid 1px rgb(215, 215, 215);
+  margin: 3px 0px 3px 26px;
+  padding: 0;
+}
+
+.menuitem {
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: #000;
+  cursor: default;
+  font: normal 400 12px/1em "Segoe UI", sans-serif;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0 8px 0 0;
+  height: 22px;
+  position: relative;
+  text-align: left;
+  transition: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.menuitem::-moz-focus-inner {
+  border: none;
+}
+
+.menuitem.has-menuitems.active,
+.menuitem:hover,
+.menuitem:focus,
+.menuitem:active {
+  background: rgb(144, 200, 246);
+  outline: none;
+}
+
+.menuitem:disabled {
+  background-color: transparent;
+  color: rgb(109, 109, 109);
+  cursor: default;
+}
+
+.menuitem:disabled:hover {
+  background-color: rgb(230, 230, 230);
+}
+
+.menuitem.default-item {
+ font-weight: bold;
+}
+
+.menuitem.has-menuitems::after {
+  position: absolute;
+  top: 0;
+  right: 4px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  content: 'chevron_right';
+  font-size: 14px;
+  font-family: "Material Icons";
+  color: #555;
+}
+
+.menuitem-fonticon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  line-height: 22px;
+  font-family: Material Icons;
+  font-size: 16px;
+  padding: 0 0;
+  text-align: center;
+}
+
+
+.menuitem-text {
+  width: 100%;
+  margin-left: 8px;
+  margin-right: 40px;
+  flex: 1 1 auto;
+}
+
+.menuitem-shortcut {
+  position: relative;
+  right: 8px;
+  margin-left: -16px;
+}
+
+.menuitem.checkbox .menuitem-fonticon::before {
+  content: '';
+  opacity: 0;
+}
+
+.menuitem.checkbox.checked .menuitem-fonticon::before {
+  content: 'check';
+  opacity: 1;
+  background: rgb(144, 200, 246);
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.menuitem.checkbox.checked:hover .menuitem-fonticon::before {
+  background: rgb(86, 176, 249);
+}
+
+.menuitem.checkbox:hover .menuitem-fonticon::before,
+.menuitem.radio:hover .menuitem-fonticon::before {
+  opacity: 1;
+}
+
+.menuitem.radio .menuitem-fonticon::before {
+  content: '';
+  opacity: 0;
+}
+
+.menuitem.radio.checked .menuitem-fonticon::before {
+  content: '\25cf';
+  opacity: 1;
+  background: rgb(144, 200, 246);
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  text-align: center;
+  width: 100%;
+  height: 16px;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0 0 6px 0;
+}
+.menuitem.radio.checked:hover .menuitem-fonticon::before {
+  background: rgb(86, 176, 249);
+}
+
+.menubar {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.menubar-item {
+  background: transparent;
+  border: solid 1px transparent;
+  outline: none;
+  font-size: 12px;
+  line-height: 18px;
+  font-family: "Segoe UI", sans-serif;
+  padding: 0 6px;
+}
+
+.menubar-item:hover {
+  background: rgb(229, 243, 255);
+  border-color: rgb(204, 232, 255);
+}
+
+.menubar-item.active {
+  background: rgb(204,232,255);
+  border-color: rgb(153,209,255);
+}

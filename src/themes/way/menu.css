@@ -1,0 +1,92 @@
+.menu {
+  box-sizing: border-box;
+  background-color: #fff;
+  border: solid 1px #ddd;
+  border-radius: 0px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, .05);
+  display: block;
+  margin: 0;
+  max-height: 100%;
+  overflow:auto;
+  padding: 1px;
+  z-index: 32000;
+}
+
+
+.menu button {
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: #333;
+  cursor: default;
+  display: flex;
+  flex-flow: row nowrap;
+  font: 400 normal 14px/1em "Source Sans Pro", sans-serif;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  position: relative;
+  position: relative;
+  text-align: left;
+  transition: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.menuitem-fonticon {
+  flex: 0 0 auto;
+  line-height: 16px;
+  font-family: Material Icons;
+  font-size: 16px;
+  width: 24px;
+  text-align: left;
+}
+
+.menuitem-text {
+  width: 100%;
+  padding-right: 24px;
+}
+
+.menuitem-shortcut {
+  opacity: 0.7;
+}
+
+.menu hr {
+  border: none;
+  border-top: solid 1px #e8e8e8;
+  margin: 2px 2px 2px 30px;
+  padding: 0;
+}
+
+.menu button::-moz-focus-inner {
+  border: none;
+}
+
+.menu button:hover,
+.menu button:focus,
+.menu button:active,
+.menu button.active {
+  background-color: #b9d8c2;
+  outline: none;
+}
+
+.menu button:disabled {
+  color: #bbb;
+  cursor: default;
+}
+
+.menu button:disabled:hover {
+  background: transparent;
+}
+
+.menu button.default-item {
+ font-weight: bold;
+}
+
+.has-menuitems::after {
+  content: 'chevron_right';
+  font-size: 16px;
+  font-family: "Material Icons";
+}

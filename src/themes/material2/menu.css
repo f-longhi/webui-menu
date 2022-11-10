@@ -1,0 +1,194 @@
+.menu, .menubar {
+  --text-color: #555;
+  --active-bg-color: #eff7f7;
+  --active-text-color: #555;
+  --font-size: 14px;
+  --font-family: "Source Sans Pro", sans serif;
+}
+
+.menu {
+  margin: 0;
+  box-sizing: border-box;
+  z-index: 32000;
+  display: block;
+  max-height: 100%;
+  overflow:auto;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, .1), 0px 0px 3px rgba(0, 0, 0, .2);
+  padding: 8px 0;
+}
+
+
+.menu button {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0 0;
+}
+
+.menuitem-fonticon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  width: 16px;
+  line-height: 16px;
+  font-family: Material Icons;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.menu:not(.menu-contains-icons) .menuitem-fonticon {
+  display: none;
+}
+
+.menuitem-text {
+  width: 100%;
+  margin-right: 28px;
+}
+
+.menuitem-shortcut {
+  opacity: 0.7;
+}
+
+.menu button {
+  background: transparent;
+  border: solid 1px transparent;
+  border-radius: 0;
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font: 400 normal 14px/1em sans-serif;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  padding: 0 24px;
+  height: 32px;
+  position: relative;
+  text-align: left;
+  transition: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.menu hr {
+  border: none;
+  border-top: solid 1px #e8e8e8;
+  margin: 4px 0;
+  padding: 0;
+}
+
+.menu button::-moz-focus-inner {
+  border: none;
+}
+
+.menu button.has-menuitems.active,
+.menu button:hover,
+.menu button:focus,
+.menu button:active {
+  background-color: var(--active-bg-color);
+  color: var(--active-text-color);
+/*   background-color: gold; */
+/*   color: white; */
+  outline: none;
+}
+
+.menu button:disabled {
+  color: #bbb;
+  cursor: default;
+}
+
+.menu button:disabled:hover {
+  background: transparent;
+}
+
+.menu button.default-item {
+ font-weight: bold;
+}
+
+.menu button.has-menuitems::after {
+  position: absolute;
+  top: 0;
+  right: 8px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  content: 'chevron_right';
+  font-size: 16px;
+  font-family: "Material Icons";
+}
+
+
+
+.menu-icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menuitem.checkbox .menuitem-fonticon::before {
+  content: 'check_box_outline_blank';
+  opacity: 0.8;
+}
+
+.menuitem.checkbox.checked .menuitem-fonticon::before {
+  content: 'check_box';
+  opacity: 1;
+}
+
+.menuitem.checkbox:hover .menuitem-fonticon::before,
+.menuitem.radio:hover .menuitem-fonticon::before {
+  opacity: 1;
+  color: black;
+}
+
+.menuitem.radio .menuitem-fonticon::before {
+  content: 'radio_button_unchecked';
+  opacity: 0.8;
+}
+
+.menuitem.radio.checked .menuitem-fonticon::before {
+  content: 'radio_button_checked';
+  opacity: 1;
+}
+
+
+
+
+.menubar ul {
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  color: #555;
+  border-bottom: solid 1px #ddd;
+}
+
+.menubar button {
+  border:none;
+  background: transparent;
+  padding: 6px 8px;
+  font: 400 normal 13px/1 sans-serif;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  color: inherit;
+}
+
+.menubar button:hover,
+.menubar button.active {
+  background-color: var(--active-bg-color);
+  color: var(--active-text-color);
+}

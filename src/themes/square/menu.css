@@ -1,0 +1,147 @@
+
+.menu {
+  margin: 0;
+  box-sizing: border-box;
+  z-index: 32000;
+  display: block;
+  max-height: 100%;
+  overflow:auto;
+  background: #fff;
+  border: solid 0px #ccc;
+  border-radius: 0px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, .1), 0px 0px 3px rgba(0, 0, 0, .2);
+  padding: 4px 0px;
+}
+
+.menu-separator {
+  border: none;
+  border-top: solid 1px #ddd;
+  margin: 4px 1px 4px 32px;
+  padding: 0;
+}
+
+.menuitem {
+  align-items: center;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  color: #333;
+  cursor: default;
+  display: flex;
+  flex-flow: row nowrap;
+  font: 400 normal 14px/1em sans-serif;
+  font-family: Roboto, sans-serif;
+  font-size: 13px;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0 8px;
+  height: 28px;
+  position: relative;
+  text-align: left;
+  transition: none;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.menuitem::-moz-focus-inner {
+  border: none;
+}
+
+.menuitem.has-menuitems.active,
+.menuitem:hover,
+.menuitem:focus,
+.menuitem:active {
+  background: lavender;
+  outline: none;
+}
+
+.menuitem:disabled {
+  color: #bbb;
+  cursor: default;
+  pointer-events: none;
+}
+
+.menuitem.default-item {
+ font-weight: bold;
+}
+
+.menuitem.has-menuitems::after {
+  position: absolute;
+  top: 0;
+  right: 4px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  content: 'chevron_right';
+  font-size: 16px;
+  font-family: "Material Icons";
+}
+
+.menuitem-fonticon {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  line-height: 16px;
+  font-family: Material Icons;
+  font-size: 16px;
+}
+
+
+.menuitem-text {
+  width: 100%;
+  margin-left: 8px;
+  margin-right: 40px;
+  flex: 1 1 auto;
+}
+
+.menuitem-shortcut {
+  position: relative;
+  right: 8px;
+}
+
+.menuitem.checkbox .menuitem-fonticon::before {
+  content: 'check_box_outline_blank';
+  opacity: 0.8;
+}
+
+.menuitem.checkbox.checked .menuitem-fonticon::before {
+  content: 'check_box';
+  opacity: 1;
+}
+
+.menuitem.checkbox:hover .menuitem-fonticon::before,
+.menuitem.radio:hover .menuitem-fonticon::before {
+  opacity: 1;
+}
+
+.menuitem.radio .menuitem-fonticon::before {
+  content: 'radio_button_unchecked';
+  opacity: 0.8;
+}
+
+.menuitem.radio.checked .menuitem-fonticon::before {
+  content: 'radio_button_checked';
+  opacity: 1;
+}
+
+.menubar {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.menubar-item {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  font-family: Roboto, sans-serif;
+  padding: 4px 8px;
+}
+
+.menubar-item.active {
+  background: lavender;
+}
